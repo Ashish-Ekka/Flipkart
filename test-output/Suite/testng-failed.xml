@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="none">
+  <listeners>
+    <listener class-name="Execution.Listeners"/>
+  </listeners>
+  <test name="Test(failed)" parallel="none">
+    <classes>
+      <class name="Execution.HomePage">
+        <methods>
+          <include name="checkingProductDetails"/>
+          <include name="searchProduct"/>
+          <include name="setAddress"/>
+          <include name="clickOnBuy"/>
+          <include name="setPincode"/>
+          <include name="closeBrowser"/>
+          <include name="searchNoOfProducts"/>
+          <include name="beforeMethod"/>
+          <include name="Login"/>
+        </methods>
+      </class> <!-- Execution.HomePage -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

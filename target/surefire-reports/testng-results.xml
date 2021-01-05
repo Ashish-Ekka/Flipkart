@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="59252" started-at="2021-01-05T23:50:03 IST" finished-at="2021-01-05T23:51:02 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="59252" started-at="2021-01-05T23:50:03 IST" finished-at="2021-01-05T23:51:02 IST">
+      <class name="Execution.HomePage">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:Execution.HomePage@ae13544]" name="beforeMethod" is-config="true" duration-ms="16061" started-at="2021-01-05T23:50:03 IST" finished-at="2021-01-05T23:50:19 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="Login()[pri:0, instance:Execution.HomePage@ae13544]" name="Login" duration-ms="15757" started-at="2021-01-05T23:50:19 IST" finished-at="2021-01-05T23:50:35 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="searchProduct()[pri:0, instance:Execution.HomePage@ae13544]" name="searchProduct" duration-ms="2452" started-at="2021-01-05T23:50:35 IST" depends-on-methods="Execution.HomePage.Login" finished-at="2021-01-05T23:50:37 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchProduct -->
+        <test-method status="PASS" signature="searchNoOfProducts()[pri:0, instance:Execution.HomePage@ae13544]" name="searchNoOfProducts" duration-ms="6715" started-at="2021-01-05T23:50:37 IST" depends-on-methods="Execution.HomePage.searchProduct, Execution.HomePage.Login" finished-at="2021-01-05T23:50:44 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchNoOfProducts -->
+        <test-method status="PASS" signature="setPincode()[pri:0, instance:Execution.HomePage@ae13544]" name="setPincode" duration-ms="9648" started-at="2021-01-05T23:50:44 IST" depends-on-methods="Execution.HomePage.searchNoOfProducts, Execution.HomePage.searchProduct, Execution.HomePage.Login" finished-at="2021-01-05T23:50:53 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setPincode -->
+        <test-method status="PASS" signature="clickOnBuy()[pri:0, instance:Execution.HomePage@ae13544]" name="clickOnBuy" duration-ms="278" started-at="2021-01-05T23:50:53 IST" depends-on-methods="Execution.HomePage.searchNoOfProducts, Execution.HomePage.searchProduct, Execution.HomePage.setPincode, Execution.HomePage.Login" finished-at="2021-01-05T23:50:54 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnBuy -->
+        <test-method status="PASS" signature="setAddress()[pri:0, instance:Execution.HomePage@ae13544]" name="setAddress" duration-ms="7641" started-at="2021-01-05T23:50:54 IST" depends-on-methods="Execution.HomePage.searchNoOfProducts, Execution.HomePage.searchProduct, Execution.HomePage.setPincode, Execution.HomePage.clickOnBuy, Execution.HomePage.Login" finished-at="2021-01-05T23:51:01 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setAddress -->
+        <test-method status="PASS" signature="checkingProductDetails()[pri:0, instance:Execution.HomePage@ae13544]" name="checkingProductDetails" duration-ms="506" started-at="2021-01-05T23:51:01 IST" depends-on-methods="Execution.HomePage.searchNoOfProducts, Execution.HomePage.searchProduct, Execution.HomePage.setPincode, Execution.HomePage.clickOnBuy, Execution.HomePage.setAddress, Execution.HomePage.Login" finished-at="2021-01-05T23:51:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkingProductDetails -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:Execution.HomePage@ae13544]" name="closeBrowser" is-config="true" duration-ms="1" started-at="2021-01-05T23:51:02 IST" finished-at="2021-01-05T23:51:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- Execution.HomePage -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
