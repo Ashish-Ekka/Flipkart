@@ -6,6 +6,7 @@ import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +19,7 @@ import org.testng.annotations.Test;
 
 import Automation.Flipkart.DriverSetup;
 import resources.Address;
+import resources.KeywordEngine;
 import resources.LoginWindowObject;
 import resources.MainPage;
 import resources.NoOfProducts;
@@ -50,12 +52,14 @@ public class HomePage extends DriverSetup{
 	}
 	
 	@Test(dependsOnMethods= {"Login"})
-	public void searchProduct()
+	public void searchProduct() throws EncryptedDocumentException, IOException
 	{
+		KeywordEngine ke = new KeywordEngine();
 		log.info("Module Name: Product Search");
 		MainPage mp = new MainPage(driver);
 		log.info("entering product name to be search");
-		mp.search().sendKeys("Redmi 9");
+		ke.stratExecution("product");
+		mp.search().sendKeys(ke.productName);
 		log.info("product name entered");
 		mp.search().sendKeys(Keys.ENTER);
 		
@@ -115,6 +119,6 @@ public class HomePage extends DriverSetup{
 	
 	public void closeBrowser()
 	{
-		//driver.quit();
+		driver.quit();
 	}
 }
