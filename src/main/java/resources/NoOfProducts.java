@@ -16,11 +16,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-public class NoOfProducts {
+
+public class NoOfProducts extends KeywordEngine{
 	
 	public WebDriver driver;
 	public Logger log = LogManager.getLogger(NoOfProducts.class.getClass());
 	
+	KeywordEngine ke = new KeywordEngine();
 	public NoOfProducts(WebDriver driver)
 	{
 		this.driver = driver;
@@ -32,6 +34,8 @@ public class NoOfProducts {
 		
 		List<WebElement> list = mp.noOfProducts();
 		List<WebElement> mobileRam = mp.selectRamofMobile();
+		ke.stratExecution("product");
+		
 		log.info("collecting list of products with the same name");
 		//int count = list.size();
 		//System.out.println(count);
@@ -55,9 +59,13 @@ public class NoOfProducts {
 				log.info("checking the desired product");
 				//Assert.assertTrue(pName.equalsIgnoreCase("Redmi K20 Pro (Glacier Blue, 128 GB)"));
 				//pName.equals("Redmi K20 Pro (Glacier Blue, 110 GB)")//
-		
-					if(pName.contains("Redmi 9 (Sporty Orange, 128 GB)"))
+				String product = ke.productName ;
+				//System.out.println("pName "+pName);
+				//System.out.println("product to be searced "+product);
+					if(pName.equalsIgnoreCase(product))
 					{
+						
+						System.out.println("inside Product if case");
 				
 						productName.click();
 						log.info("Product Name: "+pName);
@@ -65,14 +73,14 @@ public class NoOfProducts {
 						final String path = System.getProperty("user.dir")+"\\src\\main\\java\\resources\\childwindowReference.properties";
 						
 						Properties prop = new Properties();
-						FileOutputStream fip = new FileOutputStream(path);
+						FileOutputStream fos = new FileOutputStream(path);
 						Set<String> handle = driver.getWindowHandles();
 						Iterator<String> winHandle = handle.iterator();
 						String parentWindow = winHandle.next();
 						String childWindow = winHandle.next();
 						prop.setProperty("childWindow",childWindow);
 						
-						prop.store(fip, null);
+						prop.store(fos, null);
 				//		driver.switchTo().window(childWindow);
 					}
 		}
@@ -82,6 +90,8 @@ public class NoOfProducts {
 	public void getAddress()
 	{
 		MainPage mp = new MainPage(driver);
+		KeywordEngine ke = new KeywordEngine();
+		String checkAddress = ke.address;
 		List<WebElement> addressList = mp.getAddress();
 		log.info("getting all the address list which exist");
 		Iterator<WebElement> it = addressList.iterator();
@@ -95,7 +105,7 @@ public class NoOfProducts {
 			
 			System.out.println(address);
 			log.info("checking the desired address");
-			if(address.contains("House No.22"))
+			if(address.contains(checkAddress))
 			{
 				//System.out.println("Inside address condition");
 				log.info("got the desired addess, now selecting it");
