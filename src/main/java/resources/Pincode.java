@@ -1,5 +1,8 @@
 package resources;
 
+import java.io.IOException;
+
+import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -16,15 +19,18 @@ public class Pincode {
 		this.driver = driver;
 	}
 	
-	public void setPincode() throws InterruptedException
+	public void setPincode() throws InterruptedException, EncryptedDocumentException, IOException
 	{
+		KeywordEngine ke = new KeywordEngine();
+		ke.stratExecution("Product");
 		String s = driver.getWindowHandle().toString();
 		//System.out.println("Pincode driver window handle "+s);
 		MainPage mp = new MainPage(driver);
 		mp.setPincode().clear();
 		Thread.sleep(5000);
 		mp.checkPincode().click();
-		mp.setPincode().sendKeys("560077");
+		System.out.println("Pincode "+ke.pincode);
+		mp.setPincode().sendKeys(ke.pincode);
 		
 		mp.setPincode().sendKeys(Keys.ENTER);
 	}
