@@ -43,9 +43,9 @@ public class HomePage extends DriverSetup{
 		log.info("Module Name: Login");
 		LoginWindowObject l = new LoginWindowObject(driver);
 		log.info("enter username");
-		l.setUserName().sendKeys("7206000870");
+		l.setUserName().sendKeys("");
 		log.info("enter password");
-		l.setPassword().sendKeys("iamawesome");
+		l.setPassword().sendKeys("");
 		l.clickLogin().click();
 		WebDriverWait expWait = new WebDriverWait(driver, 10);
 		expWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div._3wFoIb.row")));
